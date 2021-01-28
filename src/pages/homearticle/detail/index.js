@@ -92,10 +92,21 @@ class ArticleDetail extends Component {
 	}
     
   render() {
-    const { article,modal_show,video_url } =  this.state;
+	const { article,modal_show,video_url } =  this.state;
+	const el = document.createElement("div");
+	el.innerHTML = article.description
+	const meta_desc = el.getElementsByTagName('p')[0].innerText.slice(0,100) + '...'
+
     return (
       <div className="article_detail_home">
-				<Helmet> <meta name="description" content="Learn about Afib" /> </Helmet>
+		<Helmet 
+			title={`${article.title} | Club Afib`}
+			meta={[
+				{ name: 'description', content:  meta_desc},
+				{ name: 'keywords', content: 'club, afib' }
+			]}
+			link={[{rel: 'canonical', href: `https://clubafib.com/article/${this.props.match.params.id}`}]}
+		/>
         {article.id > 0 && <Container>
           <Row className="justify-content-center">
             <Col md="8">
@@ -122,7 +133,7 @@ class ArticleDetail extends Component {
 									</div>
 								</Col>
 								<Col md="12">
-									<h1 className="item-title">{article.title}</h1>
+									<h2 className="item-title">{article.title}</h2>
 								</Col>
 								<Col md="12">
 									<div dangerouslySetInnerHTML={innerFunc(article.description)} onClick={e => this.contentClick(e)}/>

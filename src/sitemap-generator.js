@@ -14,6 +14,7 @@ async function generateSitemap() {
     let titleSplit = item.title.replace(/[^a-zA-Z0-9 ]/g, '');
     titleSplit = titleSplit.replace(/\s+$/, '');
     titleSplit = encodeURI(titleSplit);
+    titleSplit = titleSplit.toLowerCase().replace(/%20/g, '-');
     let param = titleSplit + "-" + item.id;
     idMap.push({ id: param });
   }

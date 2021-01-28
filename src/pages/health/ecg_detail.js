@@ -19,6 +19,7 @@ class ECGDetail extends React.Component {
   }
 
   async componentDidMount() {
+    
     if (this.props.history.location.search.length > 0) {
       let { from, index, chart_type, ecg_type } = this.state;
       let params = this.props.history.location.search.split("&");

@@ -144,6 +144,7 @@ class ArticleDetail extends Component {
 		const { banner, caption, title, description, category, show_order } = article;
 		return (
 			<div className="article_detail_app">
+				
 				<div className={`loading-gif ${loading_status ? "loading_show" : ""}`}></div>
 				<Container>
 					<Row className="justify-content-center">

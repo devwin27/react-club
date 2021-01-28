@@ -43,7 +43,7 @@ class Sidebar extends Component {
               {this.props.loggedin && <NavLink to="/admin" className="auth-btn v-c h-c signup" onClick={e => this.closeSidebar()}>Dashboard</NavLink>}
               {!this.props.loggedin && <NavLink to="/login" className="auth-btn v-c h-c login" onClick={e => this.closeSidebar()}>Login</NavLink>}
               {!this.props.loggedin && <NavLink to="/register" className="auth-btn v-c h-c signup" onClick={e => this.closeSidebar()}>Sign Up</NavLink>}
-              <NavLink to="/article" className="menu-item" onClick={e => this.closeSidebar()}>Learn about Afib</NavLink>
+              <NavLink to="/articles" className="menu-item" onClick={e => this.closeSidebar()}>Learn about Afib</NavLink>
               <NavLink to="/admin/health" className="menu-item" onClick={e => this.closeSidebar()}>Track Afib</NavLink>
               <NavLink to="/post" className="menu-item" onClick={e => this.closeSidebar()}>Post with other club Members</NavLink>
               <NavLink to="/admin/chat" className="menu-item" onClick={e => this.closeSidebar()}>Chat with Afib Experts</NavLink>

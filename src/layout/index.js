@@ -55,7 +55,7 @@ class Layout extends Component {
                       render={props => <route.component {...props} /> } />
                   ) : (null);
                 })}
-                <Redirect from="/" to={ is_admin ? "/admin/article" : me.type === 1 ? "/admin/chat" : "/admin/health"} />
+                <Redirect from="/" to={ is_admin ? "/admin/articles" : me.type === 1 ? "/admin/chat" : "/admin/health"} />
               </Switch>
             </Container>
           </main>

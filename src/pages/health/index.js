@@ -15,6 +15,7 @@ const HealthDatas = [
 ];
 class Health extends Component {
   render() {
+    console.log("category")
     return (
     <div className='animated fadeIn post_app'>
       <Card>

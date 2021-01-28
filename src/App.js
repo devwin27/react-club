@@ -17,8 +17,18 @@ import AboutUS from './pages/about';
 import Terms from './pages/terms';
 import Privacy from './pages/privacy';
 
+import Home from './pages/home';
+import About from './pages/about';
+import Faqs from './pages/faqs';
+import Contact from './pages/contact';
+import Articles from './pages/homearticle';
+import HomeArticleDetail from './pages/homearticle/detail';
+import HomePost from './pages/homepost';
+import HomePostDetail from './pages/homepost/detail';
+import HomeSubscribe from './pages/subscribe/home-subscribe';
+
 import { history } from './utils/history';
-import { HomeRoutes } from './routes';
+// import { HomeRoutes } from './routes';
 import ScrollRestoration from 'react-scroll-restoration'
 import './App.scss';
 import { getLogo } from './redux/actions';
@@ -48,16 +58,20 @@ class App extends React.Component {
           <React.Suspense fallback={loading()}>
             <AuthChecker />
             <Switch>
-              {HomeRoutes.map((route, idx) => {
-                return route.component ? (
-                  <Route
-                    key={idx}
-                    path={route.path}
-                    exact={route.exact}
-                    name={route.name}
-                    render={props => <HomeLayout><route.component {...props}/></HomeLayout> } />
-                ) : (null);
-              })}
+              
+              <Route exact path="/" name="Home" render={props => <HomeLayout> <Home {...props}/> </HomeLayout>} />
+              <Route exact path="/about" name="About" render={props => <HomeLayout> <About {...props}/> </HomeLayout>} />
+              <Route exact path="/contact" name="Contact" render={props => <HomeLayout> <Contact {...props}/> </HomeLayout>} />
+              <Route exact path="/faqs" name="FAQ's" render={props => <HomeLayout> <Faqs {...props}/> </HomeLayout>} />
+              <Route exact path="/privacy-policy" name="Privacy" render={props => <HomeLayout> <Privacy {...props}/> </HomeLayout>} />
+              <Route exact path="/terms-and-conditions" name="Terms" render={props => <HomeLayout> <Terms {...props}/> </HomeLayout>} />
+              <Route exact path="/articles" name="Articles" render={props => <HomeLayout> <Articles {...props}/> </HomeLayout>} />
+              <Route exact path="/article/:id" name="Article Detail" render={props => <HomeLayout> <HomeArticleDetail {...props}/> </HomeLayout>} />
+              <Route exact path="/posts" name="Posts" render={props => <HomeLayout> <HomePost {...props}/> </HomeLayout>} />
+              <Route exact path="/post/:id" name="Post Detail" render={props => <HomeLayout> <HomePostDetail {...props}/> </HomeLayout>} />
+              <Route exact path="/subscribe" name="Subscribe" render={props => <HomeLayout> <HomeSubscribe {...props}/> </HomeLayout>} />
+
+
               <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
 							<Route exact path="/admin-login" name="Admin Login Page" render={props => <AdminLogin {...props}/>} />
               <Route exact path="/register" name="Register Page" render={props => <Register {...props}/>} />

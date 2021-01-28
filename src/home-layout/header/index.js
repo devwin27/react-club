@@ -31,9 +31,9 @@ class Header extends Component {
               <span>Menu</span>
             </div> : <div className="v-c header-menus">
               <i className="fa fa-times" aria-hidden="true" onClick={e => this.setState({show_menu: false})} />
-              <NavLink to="/article">Learn about Afib</NavLink>
+              <NavLink to="/articles">Learn about Afib</NavLink>
               <NavLink to="/admin/health">Track Afib</NavLink>
-              <NavLink to="/post">Post with other club Members</NavLink>
+              <NavLink to="/posts">Post with other club Members</NavLink>
               <NavLink to="/admin/chat">Chat with Afib Experts</NavLink>
             </div>}
           </div>

@@ -29,8 +29,9 @@ class Articles extends Component {
 
 	navigate = (item) => {
 		let titleSplit = item.title.replace(/[^a-zA-Z0-9 ]/g, '');
-    titleSplit = titleSplit.replace(/\s+$/, '');
-    titleSplit = encodeURI(titleSplit);
+		titleSplit = titleSplit.replace(/\s+$/, '');		
+		titleSplit = encodeURI(titleSplit);
+		titleSplit = titleSplit.toLowerCase().replace(/%20/g, '-');
 		let param = titleSplit + "-" + item.id;
 		this.props.history.push(`/article/${param}`);
 	}
@@ -69,7 +70,14 @@ class Articles extends Component {
     }
     return (
       <div className="article_home">
-				<Helmet> <meta name="description" content="Learn about Afib" /> </Helmet>
+		<Helmet 
+			title="Article | Club Afib"
+			meta={[
+				{ name: 'description', content: 'Learn all about Atrial Fibrillation, Finally Manage it, and Get the Support you Need by Joining our Community of Club Members and Afib Experts' },
+				{ name: 'keywords', content: 'club, afib, article' }
+			]}
+			link={[{rel: 'canonical', href: 'https://clubafib.com/articles'}]}
+        />
         <Container>
           <div className="justify-content-center article-container">
 						<div className="search-box v-c shadow-box">
@@ -100,7 +108,7 @@ class Articles extends Component {
 										</div>
 									</Col>
 									<Col md="12">
-										<h1 className="item-title" onClick={e => this.navigate(item)}>{item.title}</h1>
+										<h2 className="item-title" onClick={e => this.navigate(item)}>{item.title}</h2>
 									</Col>
 									<Col md="12">
 										<div className="item-content" dangerouslySetInnerHTML={innerFunc(item.description)}/>

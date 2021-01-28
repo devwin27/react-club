@@ -14,7 +14,7 @@
       }
     }
     .writing-area {
-      h3 {
+      h1 {
         span {
           &:first-child {
             color: #D4391D;
@@ -46,7 +46,7 @@
       display: flex;
       flex-wrap: wrap;
     }
-    h3 {
+    h2 {
       text-align: center;
     }
     p {
@@ -154,7 +154,7 @@
         .start-writing {
           margin: 0 -90px 0 auto;
         }
-        h3 {
+        h1 {
           font-size: 45px;
         }
         p {
@@ -182,7 +182,7 @@
       }
     }
     .article-parts {
-      h3 {
+      h2 {
         font-size: 45px;
       }
       p {
@@ -260,7 +260,7 @@
         position: absolute;
         top: 10%;
         // transform: translateY(-50%);
-        h3 {
+        h1 {
           font-size: 25px;
         }
         p {
@@ -279,7 +279,7 @@
     }
     .article-parts {
       width: 100%;
-      h3 {
+      h2 {
         font-size: 25px;
       }
       p {

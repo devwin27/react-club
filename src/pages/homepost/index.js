@@ -137,7 +137,7 @@ class Post extends Component {
 		const data = posts.filter(item => item.content.toLowerCase().indexOf(search_string.toLowerCase()) > -1);
     return (
       <div className="post_home">
-				<Helmet> <meta name="description" content="Learn about Afib" /> </Helmet>
+				<Helmet  title="Post | Club Afib" />
         <Container>
           <div className="justify-content-center post-container">
 						<div className="v-c search-container">

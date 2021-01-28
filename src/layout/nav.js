@@ -7,7 +7,7 @@ export const AdminMenus =  {
     },
     {
       name: 'Article',
-      url: '/admin/article',
+      url: '/admin/articles',
       icon: 'cil-newspaper',
     },
     {
